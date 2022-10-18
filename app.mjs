@@ -1,4 +1,3 @@
-import { recipes } from "./recipes.mjs";
 import express from "express";
 import cors from "cors";
 import userRoutes from "./routes/user.mjs";
