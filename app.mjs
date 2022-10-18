@@ -7,19 +7,21 @@ import dotenv from "dotenv";
 import sgMail from "@sendgrid/mail";
 
 import mongoose from "mongoose";
+
+dotenv.config();
+
 mongoose
   .connect(process.env.MONGODB_API_KEY, {
     useNewUrlParser: true,
     useUnifiedTopology: true,
   })
   .then(() => console.log("Connexion à MongoDB réussie !"))
-  .catch(() => console.log("Connexion à MongoDB échouée !"));
+  .catch((error) => console.log("Connexion à MongoDB échouée !", error));
 
 const app = express();
 const port = process.env.PORT || 4000;
 
 app.use(cors());
-dotenv.config();
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
 
 app.use(express.json());
