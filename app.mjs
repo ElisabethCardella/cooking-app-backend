@@ -5,7 +5,7 @@ import recipeRoutes from "./routes/recipes.mjs";
 import cuisinesRoutes from "./routes/cuisines.mjs";
 import dotenv from "dotenv";
 import sgMail from "@sendgrid/mail";
-
+import fetch from "node-fetch";
 import mongoose from "mongoose";
 
 dotenv.config();
